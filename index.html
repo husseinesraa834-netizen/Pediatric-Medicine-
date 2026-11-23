@@ -2917,13 +2917,13 @@ function renderQuestions() {
       feedback.classList.add("show");
       if (!hasKey) {
         feedback.classList.add("no-key-fb");
-        feedback.innerHTML = `تم تسجيل اختيارك: <strong>${q.options[chosen]}
+        feedback.innerHTML = `تم تسجيل اختيارك: <strong>${q.options[chosen]}</strong>`;
       } else if (chosen === q.answer) {
         feedback.classList.add("correct-fb");
-        feedback.innerHTML = إجابة صحيحة: <strong>${q.options[q.answer]}</strong>`;
+        feedback.innerHTML = `إجابة صحيحة: <strong>${q.options[q.answer]}</strong>`;
       } else {
         feedback.classList.add("wrong-fb");
-        feedback.innerHTML = `إجابتك: <strong>${q.options[chosen]}</strong> — الإجابة هي: <strong>${q.options[q.answer]}</strong>`;
+        feedback.innerHTML = `إجابتك: <strong>${q.options[chosen]}</strong> — الإجابة الصحيحة هي: <strong>${q.options[q.answer]}</strong>`;
       }
       if (q.note) {
         feedback.innerHTML += `<div class="note-text">${q.note}</div>`;
@@ -2950,5 +2950,3 @@ renderQuestions();
 </script>
 </body>
 </html>
-    
-      
