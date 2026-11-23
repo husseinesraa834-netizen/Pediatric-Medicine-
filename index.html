@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>بنك الأسئلة التفاعلي</title>
+  <style>
+    :root {
+      --bg-dark: #07090f;
+      --bg-card: #111622;
+      --bg-box: #182032;
+      --accent: #38bdf8;
+      --accent-dim: rgba(56, 189, 248, 0.14);
+      --gold: #fbbf24;
+      --green: #22c55e;
+      --red: #ef4444;
+      --text: #f8fafc;
+      --muted: #94a3b8;
+      --line: rgba(255, 255, 255, 0.09);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: "Times New Roman", Georgia, system-ui, Tahoma, Arial, sans-serif;
+    }
+
+    body {
+      background: radial-gradient(circle at top, #131b2e 0%, var(--bg-dark) 75%);
+      color: var(--text);
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 16px;
+    }
+
+    .card {
+      width: 100%;
+      max-width: 540px;
+      background: var(--bg-card);
+      border: 1px solid var(--line);
+      border-radius: 22px;
+      padding: 24px 20px;
+      box-shadow: 0 24px 50px rgba(0, 0, 0, 0.55);
+      text-align: center;
+    }
+
+    .screen {
+      display: none;
+    }
+
+    .screen.active {
+      display: block;
+    }
+
+    .brand-title {
+      font-size: 1.65rem;
+      font-weight: 700;
+      font-style: italic;
+      color: var(--text);
+      margin-bottom: 6px;
+    }
+
+    .divider {
+      color: var(--gold);
+      letter-spacing: 5px;
+      margin: 10px 0 18px;
+      font-size: 1rem;
+    }
+
+    .sub-text {
+      color: var(--muted);
+      font-size: 0.98rem;
+      line-height: 1.6;
+      margin-bottom: 20px;
+    }
+
+    .btn-main {
+      width: 100%;
+      background: linear-gradient(135deg, #0284c7, #38bdf8);
+      color: #06101d;
+      border: none;
+      border-radius: 14px;
+      padding: 14px 18px;
+      font-size: 1.05rem;
+      font-weight: 700;
+      cursor: pointer;
+    }
+
+    .btn-sub {
+      background: var(--bg-box);
+      color: var(--text);
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      padding: 10px 14px;
+      font-size: 0.9rem;
+      cursor: pointer;
+      margin-top: 10px;
+    }
+
+    .lectures-wrap {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      margin-top: 14px;
+    }
+
+    .lec-item {
+      background: var(--bg-box);
+      border: 1px solid var(--line);
+      border-radius: 15px;
+      padding: 14px 16px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      cursor: pointer;
+      text-align: right;
+    }
+
+    .lec-item:hover {
+      border-color: var(--accent);
+    }
+
+    .lec-left {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .lec-badge {
+      width: 34px;
+      height: 34px;
+      border-radius: 10px;
+      background: var(--accent-dim);
+      color: var(--accent);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+    }
+
+    .lec-name {
+      font-size: 1rem;
+      font-weight: 700;
+      font-style: italic;
+    }
+
+    .lec-count {
+      font-size: 0.82rem;
+      color: var(--muted);
+      margin-top: 2px;
+    }
+
+    .stats {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 8px;
+      margin-bottom: 16px;
+    }
+
+    .stat {
+      
